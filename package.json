@@ -1,0 +1,35 @@
+{
+  "name": "repoguard",
+  "version": "0.1.0",
+  "description": "Find what your GitHub profile is leaking: secrets standard scanners miss, personal data in test files, and what recruiters see.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "scan:local": "tsx scripts/scan-local.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/figtree": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "next": "^16.4.3",
+    "next-auth": "^5.0.0-beta.32",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1",
+    "tar-stream": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/tar-stream": "^3.1.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  },
+  "private": true
+}
