@@ -2,7 +2,7 @@ import Link from "next/link";
 import { auth, signIn, signOut } from "@/auth";
 
 /** Site header. Sign-in and sign-out are server actions, so no auth code ships to the browser. */
-export async function Header({ links = true }: { links?: boolean }) {
+export async function Header({ links = true, current }: { links?: boolean; current?: "checks" }) {
   const session = await auth();
   const login = session?.login;
   return (
@@ -12,11 +12,9 @@ export async function Header({ links = true }: { links?: boolean }) {
       </Link>
       <nav className="nav" aria-label="Main">
         {links && (
-          <>
-            {/* Plain anchors: in-page jumps don't need client-side routing, and Next's Link didn't scroll to the hash */}
-            <a href="/#checks">What it checks</a>
-            <a href="/#next">What&apos;s next</a>
-          </>
+          <Link href="/checks" aria-current={current === "checks" ? "page" : undefined} className={current === "checks" ? "nav-current" : undefined}>
+            What it checks
+          </Link>
         )}
         {login ? (
           <>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Mascot } from "@/components/Mascot";
 import { ScanForm } from "@/components/ScanForm";
@@ -42,8 +43,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="checks" className="checks" aria-label="What RepoGuard checks">
-          <div className="card card-lg">
+        <section className="checks" aria-label="What RepoGuard checks">
+          <Link href="/checks" className="card card-lg card-link">
             <span className="check-icon" style={{ background: "var(--tomato)" }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="8" cy="15" r="4" />
@@ -56,8 +57,9 @@ export default function Home() {
             <p className="muted" style={{ margin: 0, fontSize: 16 }}>
               Seed passwords, connection strings, committed .env files, and the same key pasted into four repos. GitHub&apos;s own scanner looks for provider tokens; these slip past it.
             </p>
-          </div>
-          <div className="card card-lg">
+            <span className="more">Read the details</span>
+          </Link>
+          <Link href="/checks" className="card card-lg card-link">
             <span className="check-icon" style={{ background: "var(--sun)" }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="12" cy="8" r="4" />
@@ -70,8 +72,9 @@ export default function Home() {
             <p className="muted" style={{ margin: 0, fontSize: 16 }}>
               Phone numbers, ID numbers, KRA PINs and emails in test files, with what the Kenya Data Protection Act and GDPR expect you to do about them.
             </p>
-          </div>
-          <div className="card card-lg">
+            <span className="more">Read the details</span>
+          </Link>
+          <Link href="/checks" className="card card-lg card-link">
             <span className="check-icon" style={{ background: "var(--mint)" }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
@@ -84,10 +87,11 @@ export default function Home() {
             <p className="muted" style={{ margin: 0, fontSize: 16 }}>
               Dead demo links, committed node_modules, empty READMEs and copy-paste repos, scored out of 100.
             </p>
-          </div>
+            <span className="more">Read the details</span>
+          </Link>
         </section>
 
-        <section id="next" className="roadmap dark-card" aria-label="Coming in version 2">
+        <section className="roadmap dark-card" aria-label="Coming in version 2">
           <h2 className="h2" style={{ flex: "0 0 200px", lineHeight: 1.05 }}>
             Coming in version 2
           </h2>
