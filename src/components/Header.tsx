@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { auth, signIn, signOut } from "@/auth";
+import { LogoMark } from "./LogoMark";
 
 /** Site header. Sign-in and sign-out are server actions, so no auth code ships to the browser. */
 export async function Header({ links = true, current }: { links?: boolean; current?: "checks" }) {
@@ -7,8 +8,9 @@ export async function Header({ links = true, current }: { links?: boolean; curre
   const login = session?.login;
   return (
     <header className="site-header">
-      <Link href="/" className="logo">
-        repoguard
+      <Link href="/" className="logo" aria-label="RepoGuard home">
+        <LogoMark size={36} />
+        <span>repoguard</span>
       </Link>
       <nav className="nav" aria-label="Main">
         {links && (
