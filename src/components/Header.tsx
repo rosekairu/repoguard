@@ -13,8 +13,9 @@ export async function Header({ links = true }: { links?: boolean }) {
       <nav className="nav" aria-label="Main">
         {links && (
           <>
-            <Link href="/#checks">What it checks</Link>
-            <Link href="/#next">What&apos;s next</Link>
+            {/* Plain anchors: in-page jumps don't need client-side routing, and Next's Link didn't scroll to the hash */}
+            <a href="/#checks">What it checks</a>
+            <a href="/#next">What&apos;s next</a>
           </>
         )}
         {login ? (

@@ -20,7 +20,8 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+[id] { scroll-margin-top: 24px; }
 body {
   margin: 0;
   background: var(--bg);
@@ -49,7 +50,7 @@ code, pre, .mono { font-family: var(--mono); }
 .site-header { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding: 22px 0; }
 .logo { font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; text-decoration: none; }
 .nav { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; font-size: 16px; font-weight: 600; }
-.nav a { text-decoration: none; }
+.nav a { text-decoration: none; border-radius: 6px; }
 
 /* Buttons: pills with a hard shadow */
 .btn {
@@ -162,6 +163,7 @@ button.row:hover, a.row:hover { transform: translate(-1px, -1px); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
 }
 
 @media print {
